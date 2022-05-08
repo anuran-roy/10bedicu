@@ -7,13 +7,10 @@ donors_data = get_json_data("donors.json")
 
 def associate_donor(hospital: dict):
     donors = hospital.get("donors", [])
-    hospital.update({
-        "donors": [
-            donors_data[donor]
-            for donor in donors
-            if donor in donors_data
-        ]
-    })
+    hospital["donors"] = [
+        donors_data[donor] for donor in donors if donor in donors_data
+    ]
+
     return hospital
 
 

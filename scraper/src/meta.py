@@ -31,8 +31,7 @@ json_data = []
 
 for row in csv_data:
     state = model_meta(row)
-    name = state["name"]
-    if name:
+    if name := state["name"]:
         json_data.append(state)
 
 dump_data("meta.json", json_data)
