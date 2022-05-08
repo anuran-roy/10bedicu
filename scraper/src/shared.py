@@ -41,9 +41,7 @@ def clean_value(word):
     # Removes the leading whitespaces and
     # if None return empty string
 
-    if not word:
-        return ""
-    return word.strip()
+    return word.strip() if word else ""
 
 
 def number(word):
@@ -64,7 +62,7 @@ def split_entities(data, delimiter="\n"):
     if not data:
         return []
 
-    if not (delimiter in data):
+    if delimiter not in data:
         delimiter = " "
 
     return data.split(delimiter)

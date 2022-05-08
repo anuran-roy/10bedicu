@@ -21,8 +21,7 @@ json_data = {}
 
 for row in csv_data:
     donor = model_donor(row)
-    uuid = donor["uuid"]
-    if uuid:
+    if uuid := donor["uuid"]:
         json_data[uuid] = donor
 
 dump_data("donors.json", json_data)

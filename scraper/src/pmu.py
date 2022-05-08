@@ -21,8 +21,7 @@ json_data = []
 
 for row in csv_data:
     pmu = model_pmu(row)
-    state = pmu["state"]
-    if state:
+    if state := pmu["state"]:
         json_data.append(pmu)
 
 dump_data("pmu.json",  json_data)
